@@ -1,0 +1,31 @@
+apiVersion: cloud.bizflycloud.vn/v1alpha1
+kind: Firewall
+metadata:
+  labels:
+    app.kubernetes.io/name: firewall
+    app.kubernetes.io/instance: firewall-sample
+    app.kubernetes.io/part-of: osdks
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: osdks
+  name: firewall-sample
+spec:
+  uid: fw-v2
+  domain: test-2
+  endpoints: 190.169.0.1
+  port: 8001
+  secret_name: secret-2
+  crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ3VENDQVVpZ0F3SUJBZ0lSQU5XcEJDdHJCZ0NMMkpIaU9oeEJIWEV3Q2dZSUtvWkl6ajBFQXdNd0lqRWcKTUI0R0ExVUVBeE1YWTJWeWRDMXRZVzVoWjJWeUxYZGxZbWh2YjJzdFkyRXdIaGNOTWpNeE1USXdNRGt6TWpRMgpXaGNOTWpReE1URTVNRGt6TWpRMldqQWlNU0F3SGdZRFZRUURFeGRqWlhKMExXMWhibUZuWlhJdGQyVmlhRzl2CmF5MWpZVEIyTUJBR0J5cUdTTTQ5QWdFR0JTdUJCQUFpQTJJQUJDRmlCLytXaC9sS3hEbC95WG15UmtTZkMzaHQKcmxGMG9CK3ZIVGs2YlJkS2VaL0ZjRGNpWmpKdjlmWEhYb25hdUo2N0FNUzNHZ2tNUlpRZkZ6M2pQZmU2aTk3MQoraUpBNmVGd2c4OTM0RVdhajV2NzNKc2NEWHRqZmRGa1hnL3cvYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trCk1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZJdTh6TGE0MTlIUFcyUW9iLzlhWWxaN0U5bVMKTUFvR0NDcUdTTTQ5QkFNREEyY0FNR1FDTUNjek9tbDk5bk95TkwwUVNKWmpKNjQxcDdVR3BESGJEekVNMnpYZQpodlVjTXN2QlNFSmp6TnB4em5mMXlLS0ZwUUl3RDBKZG0rbzkzWnNwcWlMdEFsYysvSDd4cmE4WTk4OENJV2pmClZkN2NaclkwbFAzaGdQZzdsVlk5bjVlTm1nSEkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JRzJBZ0VBTUJBR0J5cUdTTTQ5QWdFR0JTdUJCQUFpQklHZU1JR2JBZ0VCQkRDdVlPWldvL2VDMWdlRisxckkKNUNLOWhiY0orenI2MjhJU3FpOFBTbEY2TFBwOTJPMkNNcTV6YVBCcldPTnljOGVoWkFOaUFBUWhZZ2YvbG9mNQpTc1E1ZjhsNXNrWkVud3Q0YmE1UmRLQWZyeDA1T20wWFNubWZ4WEEzSW1ZeWIvWDF4MTZKMnJpZXV3REV0eG9KCkRFV1VIeGM5NHozM3VvdmU5Zm9pUU9uaGNJUFBkK0JGbW8rYis5eWJIQTE3WTMzUlpGNFA4UDA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+  backend_protocol: sddd
+  protocol: qqq
+  waf_state: "On"
+  waf_mode: "On"
+  waf_request_body_check: "Off"
+  waf_max_request_body_size_in_kb: "1047527424"
+  waf_max_request_body_size_no_file: "136314880"
+  include_owasp_config: zzzz
+  secrule_remove_by_id: mmm
+  except_list: bbbb
+  custom_rule: qwe
+  nginx_upstream_vhost: lll
+  external_name: ppp

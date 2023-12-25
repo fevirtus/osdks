@@ -1,0 +1,376 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: |-
+      [
+        {
+          "apiVersion": "cloud.bizflycloud.vn/v1alpha1",
+          "kind": "Firewall",
+          "metadata": {
+            "labels": {
+              "app.kubernetes.io/created-by": "osdks",
+              "app.kubernetes.io/instance": "firewall-sample",
+              "app.kubernetes.io/managed-by": "kustomize",
+              "app.kubernetes.io/name": "firewall",
+              "app.kubernetes.io/part-of": "osdks"
+            },
+            "name": "firewall-sample"
+          },
+          "spec": {
+            "backend_protocol": "sddd",
+            "crt": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ3VENDQVVpZ0F3SUJBZ0lSQU5XcEJDdHJCZ0NMMkpIaU9oeEJIWEV3Q2dZSUtvWkl6ajBFQXdNd0lqRWcKTUI0R0ExVUVBeE1YWTJWeWRDMXRZVzVoWjJWeUxYZGxZbWh2YjJzdFkyRXdIaGNOTWpNeE1USXdNRGt6TWpRMgpXaGNOTWpReE1URTVNRGt6TWpRMldqQWlNU0F3SGdZRFZRUURFeGRqWlhKMExXMWhibUZuWlhJdGQyVmlhRzl2CmF5MWpZVEIyTUJBR0J5cUdTTTQ5QWdFR0JTdUJCQUFpQTJJQUJDRmlCLytXaC9sS3hEbC95WG15UmtTZkMzaHQKcmxGMG9CK3ZIVGs2YlJkS2VaL0ZjRGNpWmpKdjlmWEhYb25hdUo2N0FNUzNHZ2tNUlpRZkZ6M2pQZmU2aTk3MQoraUpBNmVGd2c4OTM0RVdhajV2NzNKc2NEWHRqZmRGa1hnL3cvYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trCk1BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZJdTh6TGE0MTlIUFcyUW9iLzlhWWxaN0U5bVMKTUFvR0NDcUdTTTQ5QkFNREEyY0FNR1FDTUNjek9tbDk5bk95TkwwUVNKWmpKNjQxcDdVR3BESGJEekVNMnpYZQpodlVjTXN2QlNFSmp6TnB4em5mMXlLS0ZwUUl3RDBKZG0rbzkzWnNwcWlMdEFsYysvSDd4cmE4WTk4OENJV2pmClZkN2NaclkwbFAzaGdQZzdsVlk5bjVlTm1nSEkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+            "custom_rule": "qwe",
+            "domain": "test-2",
+            "endpoints": "190.169.0.1",
+            "except_list": "bbbb",
+            "external_name": "ppp",
+            "include_owasp_config": "zzzz",
+            "key": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JRzJBZ0VBTUJBR0J5cUdTTTQ5QWdFR0JTdUJCQUFpQklHZU1JR2JBZ0VCQkRDdVlPWldvL2VDMWdlRisxckkKNUNLOWhiY0orenI2MjhJU3FpOFBTbEY2TFBwOTJPMkNNcTV6YVBCcldPTnljOGVoWkFOaUFBUWhZZ2YvbG9mNQpTc1E1ZjhsNXNrWkVud3Q0YmE1UmRLQWZyeDA1T20wWFNubWZ4WEEzSW1ZeWIvWDF4MTZKMnJpZXV3REV0eG9KCkRFV1VIeGM5NHozM3VvdmU5Zm9pUU9uaGNJUFBkK0JGbW8rYis5eWJIQTE3WTMzUlpGNFA4UDA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+            "nginx_upstream_vhost": "lll",
+            "port": 8001,
+            "protocol": "qqq",
+            "secret_name": "secret-2",
+            "secrule_remove_by_id": "mmm",
+            "uid": "fw-v2",
+            "waf_max_request_body_size_in_kb": "1047527424",
+            "waf_max_request_body_size_no_file": "136314880",
+            "waf_mode": "On",
+            "waf_request_body_check": "Off",
+            "waf_state": "On"
+          }
+        }
+      ]
+    capabilities: Basic Install
+    createdAt: "2023-12-21T09:59:00Z"
+    operators.operatorframework.io/builder: operator-sdk-v1.32.0
+    operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+  name: osdks.v0.0.1
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Firewall is the Schema for the firewalls API
+      displayName: Firewall
+      kind: Firewall
+      name: firewalls.cloud.bizflycloud.vn
+      version: v1alpha1
+  description: firewall's description
+  displayName: firewall
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      clusterPermissions:
+      - rules:
+        - apiGroups:
+          - apps
+          resources:
+          - deployments
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - cloud.bizflycloud.vn
+          resources:
+          - firewalls
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - cloud.bizflycloud.vn
+          resources:
+          - firewalls/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - cloud.bizflycloud.vn
+          resources:
+          - firewalls/status
+          verbs:
+          - get
+          - patch
+          - update
+        - apiGroups:
+          - ""
+          resources:
+          - configmap
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - endpoint
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - namespaces
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - pods
+          verbs:
+          - get
+          - list
+        - apiGroups:
+          - ""
+          resources:
+          - secret
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - service
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - ""
+          resources:
+          - serviceAccount
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - networking
+          resources:
+          - ingresses
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - rbac
+          resources:
+          - role
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - authentication.k8s.io
+          resources:
+          - tokenreviews
+          verbs:
+          - create
+        - apiGroups:
+          - authorization.k8s.io
+          resources:
+          - subjectaccessreviews
+          verbs:
+          - create
+        serviceAccountName: osdks-controller-manager
+      deployments:
+      - label:
+          app.kubernetes.io/component: manager
+          app.kubernetes.io/created-by: osdks
+          app.kubernetes.io/instance: controller-manager
+          app.kubernetes.io/managed-by: kustomize
+          app.kubernetes.io/name: deployment
+          app.kubernetes.io/part-of: osdks
+          control-plane: controller-manager
+        name: osdks-controller-manager
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              control-plane: controller-manager
+          strategy: {}
+          template:
+            metadata:
+              annotations:
+                kubectl.kubernetes.io/default-container: manager
+              labels:
+                control-plane: controller-manager
+            spec:
+              affinity:
+                nodeAffinity:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                    nodeSelectorTerms:
+                    - matchExpressions:
+                      - key: kubernetes.io/arch
+                        operator: In
+                        values:
+                        - amd64
+                        - arm64
+                        - ppc64le
+                        - s390x
+                      - key: kubernetes.io/os
+                        operator: In
+                        values:
+                        - linux
+              containers:
+              - args:
+                - --secure-listen-address=0.0.0.0:8443
+                - --upstream=http://127.0.0.1:8080/
+                - --logtostderr=true
+                - --v=0
+                image: gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1
+                name: kube-rbac-proxy
+                ports:
+                - containerPort: 8443
+                  name: https
+                  protocol: TCP
+                resources:
+                  limits:
+                    cpu: 500m
+                    memory: 128Mi
+                  requests:
+                    cpu: 5m
+                    memory: 64Mi
+                securityContext:
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    drop:
+                    - ALL
+              - args:
+                - --health-probe-bind-address=:8081
+                - --metrics-bind-address=127.0.0.1:8080
+                - --leader-elect
+                command:
+                - /manager
+                image: docker.io/fevirtus/firewall:0.0.1
+                livenessProbe:
+                  httpGet:
+                    path: /healthz
+                    port: 8081
+                  initialDelaySeconds: 15
+                  periodSeconds: 20
+                name: manager
+                readinessProbe:
+                  httpGet:
+                    path: /readyz
+                    port: 8081
+                  initialDelaySeconds: 5
+                  periodSeconds: 10
+                resources:
+                  limits:
+                    cpu: 500m
+                    memory: 128Mi
+                  requests:
+                    cpu: 10m
+                    memory: 64Mi
+                securityContext:
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    drop:
+                    - ALL
+              securityContext:
+                runAsNonRoot: true
+              serviceAccountName: osdks-controller-manager
+              terminationGracePeriodSeconds: 10
+      permissions:
+      - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - configmaps
+          verbs:
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
+        - apiGroups:
+          - coordination.k8s.io
+          resources:
+          - leases
+          verbs:
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
+        - apiGroups:
+          - ""
+          resources:
+          - events
+          verbs:
+          - create
+          - patch
+        serviceAccountName: osdks-controller-manager
+    strategy: deployment
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - firewall
+  links:
+  - name: Osdks
+    url: https://osdks.domain
+  maintainers:
+  - email: fevirtus@gmail.com
+    name: virtus
+  maturity: alpha
+  provider:
+    name: provider firewall
+  version: 0.0.1

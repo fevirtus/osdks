@@ -1,0 +1,47 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: osdks.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Firewall is the Schema for the firewalls API
+      displayName: Firewall
+      kind: Firewall
+      name: firewalls.cloud.bizflycloud.vn
+      version: v1alpha1
+  description: firewall's description
+  displayName: firewall
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - firewall
+  links:
+  - name: Osdks
+    url: https://osdks.domain
+  maintainers:
+  - email: fevirtus@gmail.com
+    name: virtus
+  maturity: alpha
+  provider:
+    name: provider firewall
+  version: 0.0.0
